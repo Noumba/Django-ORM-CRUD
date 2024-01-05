@@ -29,3 +29,13 @@ full_time_instructors = Instructor.objects.filter(full_time=True, total_learners
                                                       first_name__startswith='Y')
 print("5. Find all full time instructors with First Name starts with `Y` and learners count greater than 30000")
 print(full_time_instructors)
+
+ # Find students with last name "Smith"
+learners_smith = Learner.objects.filter(last_name = "Smith")
+print("1. Find learners with last name `Smith`")
+print(learners_smith)
+print("\n")
+# Order by dob descending, and select the first two objects
+learners = Learner.objects.order_by('-dob')[0:2]
+print("2. Find top two youngest learners")
+print(learners)
